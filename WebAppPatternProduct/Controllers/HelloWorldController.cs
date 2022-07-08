@@ -8,9 +8,9 @@ namespace WebAppPatternProduct.Controllers
         {
             return "This is my Default Action";
         }
-        public string Welcome(int numTimes, string name)
+        public string Welcome(int ID, string name)
         {
-            return $"Hello {name}, Num Times = {numTimes}";
+            return $"Hello {name}, ID = {ID}";
         }
     }
 }
