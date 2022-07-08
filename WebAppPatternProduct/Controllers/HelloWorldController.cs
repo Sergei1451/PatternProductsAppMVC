@@ -4,9 +4,9 @@ namespace WebAppPatternProduct.Controllers
 {
     public class HelloWorldController : Controller
     {
-        public string Index()
+        public IActionResult Index()
         {
-            return "This is my Default Action";
+            return View();
         }
         public string Welcome(int ID, string name)
         {
