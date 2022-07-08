@@ -1,4 +1,9 @@
+﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.DependencyInjection;
+using WebAppPatternProduct.Data;
 var builder = WebApplication.CreateBuilder(args);
+builder.Services.AddDbContext<WebAppPatternProductContext>(options =>
+    options.UseSqlServer(builder.Configuration.GetConnectionString("WebAppPatternProductContext") ?? throw new InvalidOperationException("Connection string 'WebAppPatternProductContext' not found.")));
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
