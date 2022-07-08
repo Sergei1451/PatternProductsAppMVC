@@ -8,9 +8,11 @@ namespace WebAppPatternProduct.Controllers
         {
             return View();
         }
-        public string Welcome(int ID, string name)
+        public IActionResult Welcome(int numtimes, string name)
         {
-            return $"Hello {name}, ID = {ID}";
+            ViewData["Message"] = "Hello" + name;
+            ViewData["NumTimes"] = numtimes;
+            return View();
         }
     }
 }
