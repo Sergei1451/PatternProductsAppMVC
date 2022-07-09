@@ -1,6 +1,8 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using WebAppPatternProduct.Data;
+using WebAppPatternProduct.Models;
+
 var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddDbContext<WebAppPatternProductContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("WebAppPatternProductContext") ?? throw new InvalidOperationException("Connection string 'WebAppPatternProductContext' not found.")));
@@ -9,6 +11,12 @@ builder.Services.AddDbContext<WebAppPatternProductContext>(options =>
 builder.Services.AddControllersWithViews();
 
 var app = builder.Build();
+
+using (var scope = app.Services.CreateScope())
+{
+    var sevices = scope.ServiceProvider;
+    SeedData.Initialize(sevices);
+}
 
 // Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())
