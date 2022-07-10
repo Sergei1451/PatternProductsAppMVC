@@ -78,7 +78,7 @@ namespace WebAppPatternProduct.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,Title,ReleaseDate,CategoryProduct,Price")] ProductPOCO productPOCO)
+        public async Task<IActionResult> Create([Bind("Id,Title,ReleaseDate,CategoryProduct,Price,Rating")] ProductPOCO productPOCO)
         {
             if (ModelState.IsValid)
             {
@@ -110,7 +110,7 @@ namespace WebAppPatternProduct.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,Title,ReleaseDate,CategoryProduct,Price")] ProductPOCO productPOCO)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,Title,ReleaseDate,CategoryProduct,Price,Rating")] ProductPOCO productPOCO)
         {
             if (id != productPOCO.Id)
             {
