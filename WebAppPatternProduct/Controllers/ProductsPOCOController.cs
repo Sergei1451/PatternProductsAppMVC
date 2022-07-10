@@ -19,6 +19,12 @@ namespace WebAppPatternProduct.Controllers
             _context = context;
         }
 
+        [HttpPost]
+        public string Index(string searchString, bool notUsed)
+        {
+            return "From [HttpPost]Index: filter on " + searchString;
+        }
+
         // GET: ProductsPOCO
         public async Task<IActionResult> Index(string searchString)
         {
