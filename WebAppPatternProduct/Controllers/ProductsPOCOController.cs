@@ -20,13 +20,13 @@ namespace WebAppPatternProduct.Controllers
         }
 
         // GET: ProductsPOCO
-        public async Task<IActionResult> Index(string searchString)
+        public async Task<IActionResult> Index(string id)
         {
             var products = from m in _context.ProductPOCO
                            select m;
-            if (!String.IsNullOrEmpty(searchString))
+            if (!String.IsNullOrEmpty(id))
             {
-                products = products.Where(s => s.Title.Contains(searchString));
+                products = products.Where(s => s.Title.Contains(id));
             }
               return View(await products.ToListAsync());
         }
