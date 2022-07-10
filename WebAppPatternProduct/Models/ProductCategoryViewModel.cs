@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc.Rendering;
+using System.Collections.Generic;
 
 namespace WebAppPatternProduct.Models
 {
@@ -7,6 +8,6 @@ namespace WebAppPatternProduct.Models
         public List<ProductPOCO>? Products { get; set; }
         public SelectList? Category { get; set; }
         public string? ProductCategory { get; set; }
-        public string SearchString { get; set; }
+        public string? SearchString { get; set; }
     }
 }

@@ -26,15 +26,27 @@ namespace WebAppPatternProduct.Controllers
         }
 
         // GET: ProductsPOCO
-        public async Task<IActionResult> Index(string searchString)
+        public async Task<IActionResult> Index(string productCategory ,string searchString)
         {
+            IQueryable<string> categoryQuery = from m in _context.ProductPOCO
+                                               orderby m.CategoryProduct
+                                               select m.CategoryProduct;
             var products = from m in _context.ProductPOCO
                            select m;
-            if (!String.IsNullOrEmpty(searchString))
+            if (!string.IsNullOrEmpty(searchString))
             {
                 products = products.Where(s => s.Title.Contains(searchString));
             }
-              return View(await products.ToListAsync());
+            if (!string.IsNullOrEmpty(productCategory))
+            {
+                products = products.Where(x => x.CategoryProduct == productCategory);
+            }
+            var productCategoryVM = new ProductCategoryViewModel
+            {
+                Category = new SelectList(await categoryQuery.Distinct().ToArrayAsync()),
+                Products = await products.ToListAsync()
+            };
+              return View(productCategoryVM);
         }
 
         // GET: ProductsPOCO/Details/5
