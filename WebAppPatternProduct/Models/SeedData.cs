@@ -23,6 +23,7 @@ namespace WebAppPatternProduct.Models
                         Title = "Product_1",
                         ReleaseDate = DateTime.Parse("1950-1-10"),
                         CategoryProduct = "Category_Product_1",
+                        Rating = "Bad",
                         Price = 10m
                     },
 
@@ -31,6 +32,7 @@ namespace WebAppPatternProduct.Models
                          Title = "Product_2",
                          ReleaseDate = DateTime.Parse("1960-2-10"),
                          CategoryProduct = "Category_Product_2",
+                         Rating = "Good",
                          Price = 11m
                      },
 
@@ -39,6 +41,7 @@ namespace WebAppPatternProduct.Models
                          Title = "Product_3",
                          ReleaseDate = DateTime.Parse("1970-3-10"),
                          CategoryProduct = "Category_Product_1",
+                         Rating = "Bad",
                          Price = 12m
                      },
 
@@ -47,6 +50,7 @@ namespace WebAppPatternProduct.Models
                          Title = "Product_4",
                          ReleaseDate = DateTime.Parse("1980-4-10"),
                          CategoryProduct = "Category_Product_2",
+                         Rating = "Excellent",
                          Price = 13m
                      }
                 );
