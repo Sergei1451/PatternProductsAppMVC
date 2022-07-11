@@ -1,0 +1,16 @@
+{
+  "Version": 1,
+  "ProjectMap": {
+    "e10c6ece-d18a-4d43-be72-a8e4ad073fb6": {
+      "ProjectGuid": "e10c6ece-d18a-4d43-be72-a8e4ad073fb6",
+      "DisplayName": "WebAppPatternProduct",
+      "ColorIndex": 0
+    },
+    "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3": {
+      "ProjectGuid": "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3",
+      "DisplayName": "Прочие файлы",
+      "ColorIndex": -1
+    }
+  },
+  "NextColorIndex": 1
+}
